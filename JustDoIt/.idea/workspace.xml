@@ -25,7 +25,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+  <component name="ComposerSettings" doNotAsk="true" synchronizationState="SYNCHRONIZE">
     <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
     <execution />
   </component>
@@ -38,6 +38,9 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="PackageJsonUpdateNotifier">
+    <dismissed value="$PROJECT_DIR$/package.json" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -156,6 +159,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/storage/app/public" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
@@ -164,6 +168,16 @@
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\devan\Desktop\ProjectWeb\JustDoIt\storage\app\public" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\devan\Desktop\ProjectWeb\JustDoIt\storage\assets" />
+      <recent name="C:\Users\devan\Desktop\ProjectWeb\JustDoIt\storage\app\public" />
+      <recent name="C:\Users\devan\Desktop\ProjectWeb\JustDoIt\resources\views" />
+    </key>
   </component>
   <component name="RunManager">
     <configuration name="phpunit.xml" type="PHPUnitRunConfigurationType" factoryName="PHPUnit">
@@ -180,6 +194,7 @@
       <option name="presentableId" value="Default" />
       <updated>1605590061308</updated>
       <workItem from="1605590062552" duration="3016000" />
+      <workItem from="1605598009501" duration="9567000" />
     </task>
     <servers />
   </component>
@@ -196,8 +211,25 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="845" y="374" key="#File_Watchers" timestamp="1605600533574">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="845" y="374" key="#File_Watchers/0.0.1920.1080@0.0.1920.1080" timestamp="1605600533574" />
+    <state x="414" y="195" width="1092" height="728" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1605600315622">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="414" y="195" width="1092" height="728" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1605600315621" />
+    <state x="629" y="318" key="EditFileWatcherDialog" timestamp="1605600530294">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="629" y="318" key="EditFileWatcherDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1605600530294" />
+    <state x="975" y="294" key="FileChooserDialogImpl" timestamp="1605600491379">
+      <screen x="0" y="0" width="1920" height="1080" />
+    </state>
+    <state x="975" y="294" key="FileChooserDialogImpl/0.0.1920.1080@0.0.1920.1080" timestamp="1605600491379" />
     <state x="794" y="463" key="NewPhpFileDialog" timestamp="1605590269155">
       <screen x="0" y="0" width="1920" height="1080" />
     </state>

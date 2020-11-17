@@ -20,3 +20,27 @@ Route::get('/', function () {
 Route::get('/detail', function () {
     return view('detail');
 });
+
+Route::get('/cart', function () {
+    return view('cart');
+});
+
+Route::get('/cart/add/1', function () {
+    return view('cart-add');
+});
+
+Route::get('/cart/edit', function () {
+    return view('cart-edit');
+});
+
+Route::get('/transaction', function () {
+    return view('transaction');
+});
+
+Route::get('/add', function () {
+    return view('shoes-add');
+});
+
+Route::get('/edit', function () {
+    return view('shoes-edit');
+});

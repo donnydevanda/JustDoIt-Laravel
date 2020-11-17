@@ -58,6 +58,20 @@ footer {
 }
 
 .btn-primary:hover{
-    background-color: #3252DF;;
+    background-color: #3252DF;
+}
+
+.thead{
+    background-color: #3252DF;
+    color: #FFFFFF;
+}
+
+.mid-align:before {
+    content: '';
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+    margin-right: -0.25em;
+
 }
 /*# sourceMappingURL=style.css.map */
