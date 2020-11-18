@@ -11,20 +11,23 @@
                     <span class="sr-only">Toggle Dropdown</span>
                 </button>
                 <div class="dropdown-menu">
+                    <a class="dropdown-item" href="{{url('/')}}">View All Shoes</a>
                     <a class="dropdown-item" href="#">View Cart</a>
                     <a class="dropdown-item" href="#">View Transaction</a>
                 </div>
             </div>
             <div class="row">
+                @foreach($shoes as $shoes)
                 <div class="col">
                     <div class="card mt-5" style="width: 18rem;">
-                        <a href="#"><img src="https://cdn.flightclub.com/TEMPLATE/800801/1.jpg" class="card-img-top" alt="https://cdn.flightclub.com/TEMPLATE/800801/1.jpg"></a>
+                        <a href="#"><img src={{asset('storage/'.$shoes->image)}} class="card-img-top" alt="https://cdn.flightclub.com/TEMPLATE/800801/1.jpg"></a>
                         <div class="card-body">
-                            <h5 class="card-title"><a href="#">Yeezy</a></h5>
-                            <p class="card-text">Rp. 30.000.000</p>
+                            <h5 class="card-title"><a href="#">{{$shoes->name}}</a></h5>
+                            <p class="card-text">Rp. {{$shoes->price}}</p>
                         </div>
                     </div>
                 </div>
+                @endforeach
             </div>
         </div>
     </section>

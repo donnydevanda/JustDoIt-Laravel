@@ -11,7 +11,7 @@
                         <span class="sr-only">Toggle Dropdown</span>
                     </button>
                     <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">View All Shoes</a>
+                        <a class="dropdown-item" href="{{url('/')}}">View All Shoes</a>
                         <a class="dropdown-item" href="#">View Cart</a>
                         <a class="dropdown-item" href="#">View Transaction</a>
                     </div>
@@ -27,49 +27,30 @@
                     </div>
                 </div>
 
-                <div class="row mt-3">
-                    <div class="col">
-                        <p>Shoe Name:</p>
+                <form action="{{url('update')}}" method="POST">
+                    {{csrf_field()}}
+                    <div class="form-group">
+                        <label for="id">Name</label>
+                        <input type="text" class="form-control" name="id"/>
                     </div>
-                    <div class="col">
-                        <input type="text" class="form-control" id="quantity"/>
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" class="form-control" name="name"/>
                     </div>
-                </div>
-                <div class="row mt-3">
-                    <div class="col">
-                        <p>Price:</p>
+                    <div class="form-group">
+                        <label for="price">Price</label>
+                        <input type="number" class="form-control" name="price"/>
                     </div>
-                    <div class="col">
-                        <input type="text" class="form-control" id="quantity"/>
+                    <div class="form-group">
+                        <label for="description">Description</label>
+                        <input type="text" class="form-control" name="description"/>
                     </div>
-                </div>
-                <div class="row mt-3">
-                    <div class="col">
-                        <p>Description:</p>
+                    <div class="form-group">
+                        <label for="Image">Image</label>
+                        <input type="text" class="form-control-file" name="image">
                     </div>
-                    <div class="col">
-                        <input type="number" class="form-control" id="quantity"/>
-                    </div>
-                </div>
-                <div class="row mt-3">
-                    <div class="col">
-                        <p>Image:</p>
-                    </div>
-                    <div class="col">
-                        <form>
-                            <div class="form-group">
-                                <input type="file" class="form-control-file" id="image">
-                            </div>
-                        </form>
-                    </div>
-                </div>
-                <div class="row mt-3">
-                    <div class="col">
-                    </div>
-                    <div class="col">
-                        <button style="float: right" class="btn btn-primary mr-3">Update</button>
-                    </div>
-                </div>
+                    <input type="submit" value="Add Now" class="btn btn-primary mt-3">
+                </form>
             </div>
         </section>
     </main>

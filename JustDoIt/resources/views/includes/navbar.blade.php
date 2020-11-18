@@ -1,6 +1,6 @@
 <div class="container" id="navbar">
     <nav class="row navbar navbar-expand-lg navbar-light bg-white px-3">
-        <a class="navbar-brand" href="#" aria-label="logo"><h2><b>JUSTDOIT!</b></h2></a>
+        <a class="navbar-brand" href="{{url('/')}}" aria-label="logo"><h2><b>JUSTDOIT!</b></h2></a>
         <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navb" aria-label="Search">
             <span class="navbar-toggler-icon"></span>
         </button>

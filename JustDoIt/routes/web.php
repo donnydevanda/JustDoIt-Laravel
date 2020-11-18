@@ -13,9 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+Route::get('/', 'ShoeController@index');
 
 Route::get('/detail', function () {
     return view('detail');
@@ -40,6 +38,10 @@ Route::get('/transaction', function () {
 Route::get('/add', function () {
     return view('shoes-add');
 });
+
+Route::post('/add', 'ShoeController@insert');
+
+Route::post('/update', 'ShoeController@update');
 
 Route::get('/edit', function () {
     return view('shoes-edit');

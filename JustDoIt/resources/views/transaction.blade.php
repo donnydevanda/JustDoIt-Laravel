@@ -11,8 +11,9 @@
                         <span class="sr-only">Toggle Dropdown</span>
                     </button>
                     <div class="dropdown-menu">
-                        <a class="dropdown-item" href="#">View All Shoes</a>
+                        <a class="dropdown-item" href="{{url('/')}}">View All Shoes</a>
                         <a class="dropdown-item" href="#">View Cart</a>
+                        <a class="dropdown-item" href="#">View Transaction</a>
                     </div>
                 </div>
                 <div class="mt-5 text-center">
