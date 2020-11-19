@@ -15,17 +15,13 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', 'ShoeController@index');
 
-Route::get('/detail', function () {
-    return view('detail');
-});
+Route::get('/detail/{slug}', 'ShoeController@detail')->name("detail");
 
 Route::get('/cart', function () {
     return view('cart');
 });
 
-Route::get('/cart/add/1', function () {
-    return view('cart-add');
-});
+Route::get('/cart/add/{slug}', 'ShoeController@cart')->name("cartAdd");
 
 Route::get('/cart/edit', function () {
     return view('cart-edit');

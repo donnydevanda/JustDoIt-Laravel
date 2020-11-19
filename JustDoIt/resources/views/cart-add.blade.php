@@ -18,12 +18,12 @@
                 </div>
                 <div class="row mt-2">
                     <div class="col">
-                        <img src="https://stockx-360.imgix.net//adidas-Yeezy-Boost-350-V2-Zyon/Images/adidas-Yeezy-Boost-350-V2-Zyon/Lv2/img01.jpg?auto=format,compress&w=559&q=90&dpr=2&updated_at=1603481985" alt="" style="width: 500px">
+                        <img src="{{asset('storage/'.$shoesCart->image)}}" alt="" style="width: 500px">
                     </div>
                     <div class="col my-1">
-                        <h2>Yeezyeezy eezy eezy eezyeezy eezy eezy</h2>
-                        <p><b>Rp. 50.000.000</b></p>
-                        <p>Sepatu mahal bos Sepatu mahal bos Sepatu mahal bos Sepatu mahal bos Sepatu mahal bos</p>
+                        <h2>{{$shoesCart->name}}</h2>
+                        <p><b>Rp. {{$shoesCart->price}}</b></p>
+                        <p>{{$shoesCart->description}}</p>
                         <div class="row">
                             <div class="col">
                                 <input type="number" class="form-control" id="quantity"/>

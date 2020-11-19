@@ -17,17 +17,20 @@
                 </div>
             </div>
             <div class="row">
-                @foreach($shoes as $shoes)
+                @foreach($shoes as $shoe)
                 <div class="col">
                     <div class="card mt-5" style="width: 18rem;">
-                        <a href="#"><img src={{asset('storage/'.$shoes->image)}} class="card-img-top" alt="https://cdn.flightclub.com/TEMPLATE/800801/1.jpg"></a>
+                        <a href="{{ route('detail', $shoe->id)}}"><img src={{asset('storage/'.$shoe->image)}} class="card-img-top" alt="https://cdn.flightclub.com/TEMPLATE/800801/1.jpg"></a>
                         <div class="card-body">
-                            <h5 class="card-title"><a href="#">{{$shoes->name}}</a></h5>
-                            <p class="card-text">Rp. {{$shoes->price}}</p>
+                            <h5 class="card-title"><a href="{{ route('detail', $shoe->id)}}">{{$shoe->name}}</a></h5>
+                            <p class="card-text">Rp. {{$shoe->price}}</p>
                         </div>
                     </div>
                 </div>
                 @endforeach
+            </div>
+            <div class="container mt-5 mx-auto">
+                {{$shoes->links()}}
             </div>
         </div>
     </section>

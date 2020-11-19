@@ -74,4 +74,16 @@ footer {
     margin-right: -0.25em;
 
 }
+
+.page-item .page-link {
+    color: #152C5B;
+    background-color: #FFFFFF;
+
+}
+
+.page-item.active .page-link {
+    color: #FFFFFF;
+    background-color: #FF498B;
+    border-color: #FF498B;
+}
 /*# sourceMappingURL=style.css.map */
