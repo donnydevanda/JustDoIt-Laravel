@@ -148,6 +148,7 @@
       <path value="$PROJECT_DIR$/vendor/phpunit/php-code-coverage" />
       <path value="$PROJECT_DIR$/vendor/phpunit/phpunit" />
       <path value="$PROJECT_DIR$/vendor/ramsey/collection" />
+      <path value="$PROJECT_DIR$/vendor/laravel/ui" />
     </include_path>
   </component>
   <component name="ProjectId" id="1kP6p7dPSavKXKzT1wZHERheSyr" />
@@ -200,7 +201,7 @@
       <workItem from="1605682220158" duration="1937000" />
       <workItem from="1605707827649" duration="5450000" />
       <workItem from="1605781175659" duration="2824000" />
-      <workItem from="1605790074334" duration="3915000" />
+      <workItem from="1605790074334" duration="6436000" />
     </task>
     <servers />
   </component>

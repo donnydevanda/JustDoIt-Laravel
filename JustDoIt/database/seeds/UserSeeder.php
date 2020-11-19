@@ -16,13 +16,13 @@ class UserSeeder extends Seeder
               'username' => 'admin',
               'email' => 'admin@jd.com',
               'password' => bcrypt('123'),
-              'role' => 'admin'
+              'role' => 'ADMIN'
             ],
             [
                 'username' => 'user',
                 'email' => 'user@jd.com',
                 'password' => bcrypt('123'),
-                'role' => 'user'
+                'role' => 'USER'
             ]
         ]);
     }

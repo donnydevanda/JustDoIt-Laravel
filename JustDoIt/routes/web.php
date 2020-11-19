@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'ShoeController@index');
+Route::get('/', 'ShoeController@index')->name("home");
 
 Route::get('/detail/{slug}', 'ShoeController@detail')->name("detail");
 
@@ -43,14 +43,18 @@ Route::get('/edit', function () {
     return view('shoes-edit');
 });
 
-Route::get('/register', function () {
-    return view('register');
-});
+//Route::get('/register', function () {
+//    return view('register');
+//});
+//
+//Route::get('/login', function () {
+//    return view('login');
+//});
+//
+//Route::post('/login', 'UserController@login');
+//
+//Route::post('/register', 'UserController@register');
 
-Route::get('/login', function () {
-    return view('login');
-});
+Auth::routes();
 
-Route::post('/login', 'UserController@login');
-
-Route::post('/register', 'UserController@register');
+Route::get('/home', 'HomeController@index')->name('home');
