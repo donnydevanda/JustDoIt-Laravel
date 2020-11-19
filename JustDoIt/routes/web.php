@@ -42,3 +42,15 @@ Route::post('/update', 'ShoeController@update');
 Route::get('/edit', function () {
     return view('shoes-edit');
 });
+
+Route::get('/register', function () {
+    return view('register');
+});
+
+Route::get('/login', function () {
+    return view('login');
+});
+
+Route::post('/login', 'UserController@login');
+
+Route::post('/register', 'UserController@register');

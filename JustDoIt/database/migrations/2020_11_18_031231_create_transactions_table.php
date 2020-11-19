@@ -18,7 +18,6 @@ class CreateTransactionsTable extends Migration
             $table->foreignId('users_id');
             $table->foreignId('shoes_id');
             $table->integer('total_price');
-            $table->string('status');
             $table->timestamp('checkout_time')->nullable();
         });
     }
