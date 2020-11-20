@@ -13,15 +13,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Auth::routes();
+
 Route::get('/', 'ShoeController@index')->name("home");
 
 Route::get('/detail/{slug}', 'ShoeController@detail')->name("detail");
 
-Route::get('/cart', function () {
-    return view('cart');
-});
+Route::get('/cart/{slug}', 'TransactionController@index')->name("cart");
 
 Route::get('/cart/add/{slug}', 'ShoeController@cart')->name("cartAdd");
+
+Route::post('/cart/add/success', 'TransactionController@insert')->name("cartAddItem");
 
 Route::get('/cart/edit', function () {
     return view('cart-edit');
@@ -31,30 +33,12 @@ Route::get('/transaction', function () {
     return view('transaction');
 });
 
-Route::get('/add', function () {
-    return view('shoes-add');
-});
+Route::get('/add', 'ShoeController@insertView');
 
 Route::post('/add', 'ShoeController@insert');
 
+Route::get('/update/{slug}', 'ShoeController@updateView');
+
 Route::post('/update', 'ShoeController@update');
-
-Route::get('/edit', function () {
-    return view('shoes-edit');
-});
-
-//Route::get('/register', function () {
-//    return view('register');
-//});
-//
-//Route::get('/login', function () {
-//    return view('login');
-//});
-//
-//Route::post('/login', 'UserController@login');
-//
-//Route::post('/register', 'UserController@register');
-
-Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');

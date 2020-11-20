@@ -18,38 +18,35 @@
                 </div>
                 <div class="row mt-2">
                     <div class="col">
-                        <img src="https://stockx-360.imgix.net//adidas-Yeezy-Boost-350-V2-Zyon/Images/adidas-Yeezy-Boost-350-V2-Zyon/Lv2/img01.jpg?auto=format,compress&w=559&q=90&dpr=2&updated_at=1603481985" alt="" style="width: 500px">
+                        <img src="{{asset('storage/'.$update->image)}}" alt="" style="width: 500px">
                     </div>
                     <div class="col my-1">
-                        <h2>Yeezyeezy eezy eezy eezyeezy eezy eezy</h2>
-                        <p><b>Rp. 50.000.000</b></p>
-                        <p>Sepatu mahal bos Sepatu mahal bos Sepatu mahal bos Sepatu mahal bos Sepatu mahal bos</p>
+                        <h2>{{$update->name}}</h2>
+                        <p><b>Rp. {{$update->price}}</b></p>
+                        <p>{{$update->description}}</p>
                     </div>
                 </div>
 
-                <form action="{{url('update')}}" method="POST">
+                <form action="{{url('update')}}" method="POST" class="mt-3 mb-3" enctype="multipart/form-data">
                     {{csrf_field()}}
+                    <input type="hidden" class="form-control" name="id" value="{{$update->id}}"/>
                     <div class="form-group">
                         <label for="id">Name</label>
-                        <input type="text" class="form-control" name="id"/>
-                    </div>
-                    <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" class="form-control" name="name"/>
+                        <input type="text" class="form-control" name="name" value="{{$update->name}}"/>
                     </div>
                     <div class="form-group">
                         <label for="price">Price</label>
-                        <input type="number" class="form-control" name="price"/>
+                        <input type="number" class="form-control" name="price" value="{{$update->price}}"/>
                     </div>
                     <div class="form-group">
                         <label for="description">Description</label>
-                        <input type="text" class="form-control" name="description"/>
+                        <input type="text" class="form-control" name="description" value="{{$update->description}}"/>
                     </div>
                     <div class="form-group">
                         <label for="Image">Image</label>
-                        <input type="text" class="form-control-file" name="image">
+                        <input type="file" class="form-control-file" name="image" value="{{$update->image}}">
                     </div>
-                    <input type="submit" value="Add Now" class="btn btn-primary mt-3">
+                    <input type="submit" value="Update Now" class="btn btn-primary mt-3">
                 </form>
             </div>
         </section>

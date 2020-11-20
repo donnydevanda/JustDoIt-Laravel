@@ -11,4 +11,8 @@ class Shoe extends Model
     ];
 
     public $timestamps = false;
+
+    public function shoes(){
+        return $this->hasMany(Shoe::class, 'shoes_id', 'id');
+    }
 }

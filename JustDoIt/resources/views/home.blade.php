@@ -12,7 +12,7 @@
                     </button>
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="{{url('/')}}">View All Shoes</a>
-                        <a class="dropdown-item" href="#">View Cart</a>
+                        <a class="dropdown-item" href="{{ route('cart', Auth::id())}}">View Cart</a>
                         <a class="dropdown-item" href="#">View Transaction</a>
                     </div>
                 </div>
@@ -20,7 +20,8 @@
                     @foreach($shoes as $shoe)
                         <div class="col">
                             <div class="card mt-5" style="width: 18rem;">
-                                <a href="{{ route('detail', $shoe->id)}}"><img src={{asset('storage/'.$shoe->image)}} class="card-img-top" alt="https://cdn.flightclub.com/TEMPLATE/800801/1.jpg"></a>
+                                <a href="{{ route('detail', $shoe->id)}}"><img src="{{asset('storage/'.$shoe->image)}}"
+                                        class="card-img-top py-2 px-2" alt="" style="width: 18rem; max-height: 12rem"></a>
                                 <div class="card-body">
                                     <h5 class="card-title"><a href="{{ route('detail', $shoe->id)}}">{{$shoe->name}}</a></h5>
                                     <p class="card-text">Rp. {{$shoe->price}}</p>

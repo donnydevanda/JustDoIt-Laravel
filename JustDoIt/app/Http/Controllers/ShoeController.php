@@ -7,8 +7,8 @@ use Illuminate\Http\Request;
 
 class ShoeController extends Controller
 {
-    function index(){
-        $shoes=Shoe::paginate(6);
+    function index(Request $request){
+        $shoes=Shoe::where('name', 'like', "%".$request->search."%")->paginate(6);
         return view('home')->with('shoes', $shoes);
     }
 
@@ -20,6 +20,10 @@ class ShoeController extends Controller
     function cart(Request $request, $slug){
         $shoesCart = Shoe::where('id', $slug) -> firstOrFail();
         return view('cart-add')->with('shoesCart', $shoesCart);
+    }
+
+    function insertView(){
+        return view('shoes-add');
     }
 
     function insert(Request $request){
@@ -40,21 +44,33 @@ class ShoeController extends Controller
         return redirect()->back();
     }
 
+    function updateView(Request $request, $slug){
+        $update = Shoe::where('id', $slug) -> firstOrFail();
+        return view('shoes-edit')->with('update', $update);
+    }
+
     function update(Request $request){
         $this->validate($request, [
             'id' => 'required|exists:shoes,id',
             'name' => 'required',
             'price'=> 'required|numeric|min: 100',
             'description' => 'required',
-
         ]);
 
-        Shoe::where('id', $request->id)->update([
-            'name'=>$request->name,
-            'price'=>$request->price,
-            'description'=>$request->description,
-            'image'=>$request->image
-        ]);
+        if($request->image != NULL){
+            Shoe::where('id', '9')->update([
+                'name'=>$request->name,
+                'price'=>$request->price,
+                'description'=>$request->description,
+                'image' => $request->file('image')->store('images', 'public')
+            ]);
+        } else{
+            Shoe::where('id', '9')->update([
+                'name'=>$request->name,
+                'price'=>$request->price,
+                'description'=>$request->description,
+            ]);
+        }
 
         return redirect()->back();
     }

@@ -6,7 +6,7 @@
         <section class="content" id="cart-edit">
             <div class="container mt-5">
                 <div class="btn-group text-center">
-                    <h2>Detail</h2>
+                    <h2>Add to Cart</h2>
                     <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         <span class="sr-only">Toggle Dropdown</span>
                     </button>
@@ -17,20 +17,23 @@
                     </div>
                 </div>
                 <div class="row mt-2">
-                    <div class="col">
-                        <img src="{{asset('storage/'.$shoesCart->image)}}" alt="" style="width: 500px">
-                    </div>
-                    <div class="col my-1">
-                        <h2>{{$shoesCart->name}}</h2>
-                        <p><b>Rp. {{$shoesCart->price}}</b></p>
-                        <p>{{$shoesCart->description}}</p>
-                        <div class="row">
-                            <div class="col">
-                                <input type="number" class="form-control" id="quantity"/>
-                            </div>
-                            <div class="col">
-                                <button class="btn btn-primary mr-3">Add to Cart</button>
-                            </div>
+                    <div class="card mx-auto mt-5" style="width: 35rem;">
+                        <img class="card-img-top py-2 px-2" src="{{asset('storage/'.$shoesCart->image)}}" alt="" style="width: 35rem">
+                        <div class="card-body">
+                            <h2>{{$shoesCart->name}}</h2>
+                            <p><b>Rp. {{$shoesCart->price}}</b></p>
+                            <p>{{$shoesCart->description}}</p>
+                            <form action="{{url('/cart/add/success')}}" method="POST" enctype="multipart/form-data">
+                                {{csrf_field()}}
+                                <div class="form-group">
+                                    <label for="quantity">Quantity</label>
+                                    <input type="hidden" class="form-control" name="id" value="{{Auth::id()}}"/>
+                                    <input type="hidden" class="form-control" name="id" value="{{$shoesCart->id}}"/>
+                                    <input type="hidden" class="form-control" name="price" value="{{$shoesCart->price}}"/>
+                                    <input type="number" class="form-control" name="quantity"/>
+                                </div>
+                                <input type="submit" value="Add Now" class="btn btn-primary mt-3">
+                            </form>
                         </div>
                     </div>
                 </div>

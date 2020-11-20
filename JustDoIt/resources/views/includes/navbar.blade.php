@@ -13,8 +13,8 @@
             <!-- Right Side Of Navbar -->
             <ul class="navbar-nav ml-auto">
                 <!-- Authentication Links -->
-                <form class="form-inline mr-5">
-                    <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                <form action="{{url()->current()}}" class="form-inline mr-5">
+                    <input class="form-control mr-sm-2" type="search" name="search" placeholder="Search Shoes ..." aria-label="Search">
                     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                 </form>
                 @guest

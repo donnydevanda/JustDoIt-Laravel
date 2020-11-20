@@ -28,20 +28,15 @@
                         </tr>
                         </thead>
                         <tbody>
-                        <tr>
-                            <td><img src="https://cdn.flightclub.com/TEMPLATE/800801/1.jpg" alt="" style="width: 150px"></td>
-                            <td class="mid-align">Yeezy</td>
-                            <td class="mid-align">5</td>
-                            <td class="mid-align">Rp. 50.000.000</td>
-                            <td class="mid-align"><button class="btn btn-primary">Edit</button></td>
-                        </tr>
-                        <tr>
-                            <td><img src="https://cdn.flightclub.com/TEMPLATE/800801/1.jpg" alt="" style="width: 150px"></td>
-                            <td class="mid-align">Yeezy</td>
-                            <td class="mid-align">5</td>
-                            <td class="mid-align">Rp. 50.000.000</td>
-                            <td class="mid-align"><button class="btn btn-primary">Edit</button></td>
-                        </tr>
+                        @foreach($items as $item)
+                            <tr>
+                                <td><img src="{{asset('storage/'.$item->shoes->image)}}" alt="" style="width: 150px"></td>
+                                <td class="mid-align">{{$item->shoes->name}}</td>
+                                <td class="mid-align">{{$item->quantity}}</td>
+                                <td class="mid-align">Rp. {{$item->price}}</td>
+                                <td class="mid-align"><button class="btn btn-primary">Edit</button></td>
+                            </tr>
+                        @endforeach
                         <tr>
                             <td></td>
                             <td class="mid-align"></td>
