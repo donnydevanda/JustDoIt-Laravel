@@ -25,13 +25,13 @@ Route::get('/cart/add/{slug}', 'ShoeController@cart')->name("cartAdd");
 
 Route::post('/cart/add/success', 'TransactionController@insert')->name("cartAddItem");
 
-Route::get('/cart/edit', function () {
-    return view('cart-edit');
-});
+Route::get('/cart/edit/{slug}', 'TransactionController@cartEditView')->name("cartEdit");
 
-Route::get('/transaction', function () {
-    return view('transaction');
-});
+Route::post('/cartEdit', 'TransactionController@cartEdit');
+
+Route::post('/cartDelete', 'TransactionController@cartDelete');
+
+Route::post('/cartCheckout', 'TransactionController@cartCheckout')->name("cartCheckout");
 
 Route::get('/add', 'ShoeController@insertView');
 
@@ -40,5 +40,7 @@ Route::post('/add', 'ShoeController@insert');
 Route::get('/update/{slug}', 'ShoeController@updateView');
 
 Route::post('/update', 'ShoeController@update');
+
+Route::get('/transaction', 'TransactionController@transaction');
 
 Route::get('/home', 'HomeController@index')->name('home');

@@ -12,25 +12,36 @@
                     </button>
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="{{url('/')}}">View All Shoes</a>
-                        <a class="dropdown-item" href="#">View Cart</a>
+                        <a class="dropdown-item" href="{{ route('cart', Auth::id())}}">View Cart</a>
                         <a class="dropdown-item" href="#">View Transaction</a>
                     </div>
                 </div>
-                <div class="mt-5 text-center">
-                    <div class="row">
-                        <div class="col">2020-06-11 07:00:00</div>
-                        <div class="col"><b>Total: Rp. 50.0000.000</b></div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <div class="card mt-5 pb-5" style="width: 15rem;">
-                                <a href="#"><img src="https://cdn.flightclub.com/TEMPLATE/800801/1.jpg" class="card-img-top" alt="https://cdn.flightclub.com/TEMPLATE/800801/1.jpg"></a>
+
+                @php
+                    $totalPrice = 0
+                @endphp
+
+                <div class="mt-5">
+                        @foreach($items as $item => $itemDetail)
+                            <h5>Transaction Date: <b>{{$item}}</b></h5>
+                            <div class="row">
+                            @foreach($itemDetail as $detail)
+                                <input type="hidden" value="{{$totalPrice += $detail["price"]}}">
+                                <div class="col mt-1">
+                                    <div class="card" style="width: 18rem;">
+                                        <img src="{{asset('storage/'.$detail->shoes->image)}}" class="card-img-top"
+                                             alt="https://cdn.flightclub.com/TEMPLATE/800801/1.jpg">
+                                    </div>
+                                </div>
+                            @endforeach
                             </div>
-                        </div>
-                    </div>
-                    <hr>
+                            @if($loop->last)
+                                <h6 class="mt-3">Total Price: <b>Rp. {{$totalPrice}}</b></h6>
+                            @endif
+                        <hr>
+                        @endforeach
                 </div>
-                </div>
+            </div>
         </section>
     </main>
 @endsection

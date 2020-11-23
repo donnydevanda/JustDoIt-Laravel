@@ -12,7 +12,7 @@
                     </button>
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="{{url('/')}}">View All Shoes</a>
-                        <a class="dropdown-item" href="#">View Cart</a>
+                        <a class="dropdown-item" href="{{ route('cart', Auth::id())}}">View Cart</a>
                         <a class="dropdown-item" href="#">View Transaction</a>
                     </div>
                 </div>
@@ -34,16 +34,29 @@
                                 <td class="mid-align">{{$item->shoes->name}}</td>
                                 <td class="mid-align">{{$item->quantity}}</td>
                                 <td class="mid-align">Rp. {{$item->price}}</td>
-                                <td class="mid-align"><button class="btn btn-primary">Edit</button></td>
+                                <td class="mid-align"><a href="{{ route('cartEdit', $item->shoes_id)}}"><button class="btn btn-primary">Edit</button></a></td>
                             </tr>
                         @endforeach
-                        <tr>
+                        @if($items == NULL)
+                            <tr>
+                                <td></td>
+                                <td class="mid-align"></td>
+                                <td class="mid-align py-5">Cart Empty</td>
+                                <td class="mid-align"></td>
+                                <td></td>
+                            </tr>
+                        @elseif($items != NULL)
                             <td></td>
                             <td class="mid-align"></td>
                             <td class="mid-align"></td>
                             <td class="mid-align"></td>
-                            <td class="mid-align"><button class="btn btn-primary my-3">Checkout Now</button></td>
-                        </tr>
+                            <td>
+                                <form action="{{url('cartCheckout')}}" class="py-3" method="POST" enctype="multipart/form-data">
+                                    {{csrf_field()}}
+                                    <input type="submit" value="Checkout Now" class="btn btn-primary">
+                                </form>
+                            </td>
+                        @endif
                         </tbody>
                     </table>
                 </div>

@@ -12,7 +12,7 @@
                     </button>
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="{{url('/')}}">View All Shoes</a>
-                        <a class="dropdown-item" href="#">View Cart</a>
+                        <a class="dropdown-item" href="{{ route('cart', Auth::id())}}">View Cart</a>
                         <a class="dropdown-item" href="#">View Transaction</a>
                     </div>
                 </div>
