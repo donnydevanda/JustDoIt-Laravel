@@ -19,7 +19,7 @@ Route::get('/', 'ShoeController@index')->name("home");
 
 Route::get('/detail/{slug}', 'ShoeController@detail')->name("detail");
 
-Route::get('/cart/{slug}', 'TransactionController@index')->name("cart");
+Route::get('/cart', 'TransactionController@index')->name("cart");
 
 Route::get('/cart/add/{slug}', 'ShoeController@cart')->name("cartAdd");
 

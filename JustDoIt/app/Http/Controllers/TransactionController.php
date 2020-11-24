@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use Auth;
 use App\Transaction;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
@@ -15,7 +16,7 @@ class TransactionController extends Controller
 
     function insert(Request $request){
         Transaction::create([
-            'users_id' => '2',
+            'users_id' => auth()->user()->id,
             'shoes_id' => $request->id,
             'quantity' => $request->quantity,
             'price' => $request->price * $request->quantity
@@ -35,23 +36,23 @@ class TransactionController extends Controller
             'price' => $request->price * $request->quantity
         ]);
 
-        return redirect('/cart/1');
+        return redirect('/cart');
     }
 
     function cartDelete(Request $request){
         Transaction::find($request->id)->delete();
-        return redirect('/cart/1');
+        return redirect('/cart');
     }
 
     function cartCheckout(Request $request){
         Transaction::whereNull('checkout_time')->update([
             'checkout_time' => Carbon::now()->toDateTimeString()
         ]);
-        return redirect('/cart/1');
+        return redirect('/cart');
     }
 
     function transaction(){
-        $items = Transaction::get()->groupBy('checkout_time');
+        $items = Transaction::get()->where('users_id', auth()->user()->id)->groupBy('checkout_time');
         return view('transaction', [
             'items' => $items,
         ]);

@@ -12,8 +12,8 @@
                     </button>
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="{{url('/')}}">View All Shoes</a>
-                        <a class="dropdown-item" href="{{ route('cart', Auth::id())}}">View Cart</a>
-                        <a class="dropdown-item" href="#">View Transaction</a>
+                        <a class="dropdown-item" href="{{url('cart')}}">View Cart</a>
+                        <a class="dropdown-item" href="{{url('transaction')}}">View Transaction</a>
                     </div>
                 </div>
 
@@ -27,17 +27,21 @@
                             <div class="row">
                             @foreach($itemDetail as $detail)
                                 <input type="hidden" value="{{$totalPrice += $detail["price"]}}">
-                                <div class="col mt-1">
+                                <div class="col-4 my-2">
                                     <div class="card" style="width: 18rem;">
                                         <img src="{{asset('storage/'.$detail->shoes->image)}}" class="card-img-top"
                                              alt="https://cdn.flightclub.com/TEMPLATE/800801/1.jpg">
                                     </div>
                                 </div>
+                                @if($loop->last)
+                                    <h6 class="col-12 mt-3">Total Price: <b>Rp. {{$totalPrice}}</b></h6>
+                                @endif
+                                @php
+                                    $totalPrice = 0
+                                @endphp
                             @endforeach
                             </div>
-                            @if($loop->last)
-                                <h6 class="mt-3">Total Price: <b>Rp. {{$totalPrice}}</b></h6>
-                            @endif
+
                         <hr>
                         @endforeach
                 </div>

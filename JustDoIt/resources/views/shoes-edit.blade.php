@@ -12,8 +12,8 @@
                     </button>
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="{{url('/')}}">View All Shoes</a>
-                        <a class="dropdown-item" href="{{ route('cart', Auth::id())}}">View Cart</a>
-                        <a class="dropdown-item" href="#">View Transaction</a>
+                        <a class="dropdown-item" href="{{url('cart')}}">View Cart</a>
+                        <a class="dropdown-item" href="{{url('transaction')}}">View Transaction</a>
                     </div>
                 </div>
                 <div class="row mt-2">
