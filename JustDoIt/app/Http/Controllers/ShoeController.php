@@ -2,19 +2,27 @@
 
 namespace App\Http\Controllers;
 
+use Auth;
 use App\Shoe;
 use Illuminate\Http\Request;
 
 class ShoeController extends Controller
 {
     function index(Request $request){
-        $shoes=Shoe::where('name', 'like', "%".$request->search."%")->paginate(6);
-        return view('home')->with('shoes', $shoes);
+        $auth = Auth::check();
+        $role = 0;
+        if($auth){
+            $role = Auth::user()->role;
+        }
+        $shoes = Shoe::where('name', 'like', "%".$request->search."%")->paginate(6);
+        return view('home', ['auth' => $auth, 'role' => $role, 'shoes' => $shoes]);
     }
 
     function detail(Request $request, $slug){
+        $auth = Auth::check();
+        $role = Auth::user()->role;
         $shoesDetail = Shoe::where('id', $slug) -> firstOrFail();
-        return view('detail')->with('shoesDetail', $shoesDetail);
+        return view('detail', ['auth' => $auth, 'role' => $role, 'shoesDetail' => $shoesDetail]);
     }
 
     function cart(Request $request, $slug){

@@ -19,7 +19,7 @@ Route::get('/', 'ShoeController@index')->name("home");
 
 Route::get('/detail/{slug}', 'ShoeController@detail')->name("detail");
 
-Route::get('/cart', 'TransactionController@index')->name("cart");
+Route::get('/cart', 'TransactionController@index')->name("cart")->middleware('myAuth');
 
 Route::get('/cart/add/{slug}', 'ShoeController@cart')->name("cartAdd");
 
@@ -33,11 +33,11 @@ Route::post('/cartDelete', 'TransactionController@cartDelete');
 
 Route::post('/cartCheckout', 'TransactionController@cartCheckout')->name("cartCheckout");
 
-Route::get('/add', 'ShoeController@insertView');
+Route::get('/add', 'ShoeController@insertView')->middleware('admin:ADMIN');
 
-Route::post('/add', 'ShoeController@insert');
+Route::post('/add', 'ShoeController@insert')->name("add");
 
-Route::get('/update/{slug}', 'ShoeController@updateView');
+Route::get('/update/{slug}', 'ShoeController@updateView')->name("updateShoes");
 
 Route::post('/update', 'ShoeController@update');
 

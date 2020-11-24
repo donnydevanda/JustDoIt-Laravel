@@ -24,7 +24,11 @@
                         <h2>{{$shoesDetail->name}}</h2>
                         <p><b>Rp. {{$shoesDetail->price}}</b></p>
                         <p>{{$shoesDetail->description}}</p>
-                        <a href="{{ route('cartAdd', $shoesDetail->id)}}"><button class="btn btn-primary">Add to Cart</button></a>
+                        @if($auth && $role == 'USER')
+                            <a href="{{ route('cartAdd', $shoesDetail->id)}}"><button class="btn btn-primary">Add to Cart</button></a>
+                        @elseif($auth && $role == 'ADMIN')
+                            <a href="{{ route('updateShoes', $shoesDetail->id)}}"><button class="btn btn-primary">Update Shoes</button></a>
+                        @endif
                     </div>
                 </div>
             </div>

@@ -12,8 +12,13 @@
                     </button>
                     <div class="dropdown-menu">
                         <a class="dropdown-item" href="{{url('/')}}">View All Shoes</a>
-                        <a class="dropdown-item" href="{{url('cart')}}">View Cart</a>
-                        <a class="dropdown-item" href="{{url('transaction')}}">View Transaction</a>
+                       @if($auth && $role == 'USER')
+                            <a class="dropdown-item" href="{{url('cart')}}">View Cart</a>
+                            <a class="dropdown-item" href="{{url('transaction')}}">View Transaction</a>
+                        @elseif($auth && $role == 'ADMIN')
+                            <a class="dropdown-item" href="{{url('add')}}">Add Shoes</a>
+                            <a class="dropdown-item" href="{{url('transaction')}}">View Transaction</a>
+                        @endif
                     </div>
                 </div>
                 <div class="row">
