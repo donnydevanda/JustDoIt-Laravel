@@ -10,13 +10,19 @@ use Illuminate\Http\Request;
 class TransactionController extends Controller
 {
     function index(){
-        $items = Transaction::whereNull('checkout_time')->get();
+        $auth = Auth::check();
+        $userId = 0;
+        if($auth){
+            $userId = Auth::user()->id;
+        }
+        $items = Transaction::whereNull('checkout_time')->where('users_id', $userId)->get();
         return view('cart')->with('items', $items);
     }
 
     function insert(Request $request){
+        $userId = Auth::user()->id;
         Transaction::create([
-            'users_id' => auth()->user()->id,
+            'users_id' => $userId,
             'shoes_id' => $request->id,
             'quantity' => $request->quantity,
             'price' => $request->price * $request->quantity
@@ -52,7 +58,14 @@ class TransactionController extends Controller
     }
 
     function transaction(){
-        $items = Transaction::get()->where('users_id', auth()->user()->id)->groupBy('checkout_time');
+        $auth = Auth::check();
+        $role = 0;
+        $item = 0;
+        if($auth){
+            $role = Auth::user()->role;
+            if($role == 'USER') $items = Transaction::get()->whereNotNull('checkout_time')->where('users_id', auth()->user()->id)->groupBy('checkout_time');
+            elseif($role == 'ADMIN') $items = Transaction::get()->whereNotNull('checkout_time')->groupBy('checkout_time');
+        }
         return view('transaction', [
             'items' => $items,
         ]);

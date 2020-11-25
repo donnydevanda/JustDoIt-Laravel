@@ -20,7 +20,10 @@ class ShoeController extends Controller
 
     function detail(Request $request, $slug){
         $auth = Auth::check();
-        $role = Auth::user()->role;
+        $role = 0;
+        if($auth){
+            $role = Auth::user()->role;
+        }
         $shoesDetail = Shoe::where('id', $slug) -> firstOrFail();
         return view('detail', ['auth' => $auth, 'role' => $role, 'shoesDetail' => $shoesDetail]);
     }
@@ -66,14 +69,14 @@ class ShoeController extends Controller
         ]);
 
         if($request->image != NULL){
-            Shoe::where('id', '9')->update([
+            Shoe::where('id', $request->id)->update([
                 'name'=>$request->name,
                 'price'=>$request->price,
                 'description'=>$request->description,
                 'image' => $request->file('image')->store('images', 'public')
             ]);
-        } else{
-            Shoe::where('id', '9')->update([
+        } elseif($request->image == NULL){
+            Shoe::where('id', $request->id)->update([
                 'name'=>$request->name,
                 'price'=>$request->price,
                 'description'=>$request->description,

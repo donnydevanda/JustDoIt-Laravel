@@ -14,16 +14,25 @@ class TransactionSeeder extends Seeder
         DB::table('Transactions')->insert([
             [
                 'users_id' => '2',
-                'shoes_id' => '1',
-                'quantity' => '2',
-                'price' => '7760000'
+                'shoes_id' => '6',
+                'quantity' => '1',
+                'price' => '4050000',
+                'checkout_time' => '2020-11-21 07:26:22'
             ],
             [
-                'users_id' => '2',
-                'shoes_id' => '3',
+                'users_id' => '3',
+                'shoes_id' => '8',
                 'quantity' => '1',
-                'price' => '3490000'
-            ]
+                'price' => '38000000',
+                'checkout_time' => '2020-11-22 08:28:22'
+            ],
+            [
+                'users_id' => '3',
+                'shoes_id' => '7',
+                'quantity' => '1',
+                'price' => '3722000',
+                'checkout_time' => '2020-11-22 08:28:22'
+            ],
         ]);
     }
 }

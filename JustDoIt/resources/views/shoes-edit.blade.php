@@ -44,7 +44,7 @@
                     </div>
                     <div class="form-group">
                         <label for="Image">Image</label>
-                        <input type="file" class="form-control-file" name="image" value="{{$update->image}}">
+                        <input type="file" class="form-control-file" name="image" value="{{$update->images}}">
                     </div>
                     <input type="submit" value="Update Now" class="btn btn-primary mt-3">
                 </form>
