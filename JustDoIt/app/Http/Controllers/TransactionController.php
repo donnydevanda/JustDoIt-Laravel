@@ -21,9 +21,12 @@ class TransactionController extends Controller
 
     function insert(Request $request){
         $userId = Auth::user()->id;
-        Transaction::create([
+        Transaction::updateOrCreate([
             'users_id' => $userId,
             'shoes_id' => $request->id,
+            'checkout_time' => null
+        ],
+        [
             'quantity' => $request->quantity,
             'price' => $request->price * $request->quantity
         ]);
@@ -32,12 +35,14 @@ class TransactionController extends Controller
     }
 
     function cartEditView(Request $request, $slug){
-        $cartEdit = Transaction::where('shoes_id', $slug) -> firstOrFail();
+        $id = Auth::user()->id;
+        $cartEdit = Transaction::where(['shoes_id' => $slug, 'users_id' => $id, 'checkout_time' => null])->firstOrFail();
         return view('cart-edit')->with('cartEdit', $cartEdit);
     }
 
     function cartEdit(Request $request){
-        Transaction::where('id', $request->id)->update([
+        $id = Auth::user()->id;
+        Transaction::where(['id' => $request->id, 'users_id' => $id, 'checkout_time' => null])->update([
             'quantity' => $request->quantity,
             'price' => $request->price * $request->quantity
         ]);

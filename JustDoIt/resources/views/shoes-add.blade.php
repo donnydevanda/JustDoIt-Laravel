@@ -20,21 +20,41 @@
                     {{csrf_field()}}
                     <div class="form-group">
                         <label for="name">Name</label>
-                        <input type="text" class="form-control" name="name"/>
+                        <input type="text" class="form-control @error('name') is-invalid @enderror" name="name"/>
+                        @error('name')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
                     </div>
                     <div class="form-group">
                         <label for="price">Price</label>
-                        <input type="number" class="form-control" name="price"/>
+                        <input type="number" class="form-control @error('price') is-invalid @enderror" name="price"/>
+                        @error('price')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
                     </div>
                     <div class="form-group">
                         <label for="description">Description</label>
-                        <input type="text" class="form-control" name="description"/>
+                        <input type="text" class="form-control @error('description') is-invalid @enderror" name="description"/>
+                        @error('description')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
                     </div>
                     <div class="form-group">
                         <label for="Image">Image</label>
                         <input type="file" class="form-control-file" name="image">
                     </div>
-                    <input type="submit" value="Add Now" class="btn btn-primary mt-3">
+                    <input type="submit" value="Add Now" class="btn btn-primary mt-3 @error('image') is-invalid @enderror">
+                    @error('image')
+                    <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
                 </form>
             </div>
         </section>

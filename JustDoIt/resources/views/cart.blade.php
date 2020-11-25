@@ -4,7 +4,7 @@
 @section('content')
     <main>
         <section class="content">
-            <div class="container mt-5">
+            <div class="container my-5">
                 <div class="btn-group text-center">
                     <h2>Cart</h2>
                     <button type="button" class="btn btn-secondary dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -30,7 +30,7 @@
                         <tbody>
                         @foreach($items as $item)
                             <tr>
-                                <td><img src="{{asset('storage/'.$item->shoes->image)}}" alt="" style="width: 150px"></td>
+                                <td><img src="{{asset('storage/'.$item->shoes->image)}}" alt="" style="width: 150px; height: 90px"></td>
                                 <td class="mid-align">{{$item->shoes->name}}</td>
                                 <td class="mid-align">{{$item->quantity}}</td>
                                 <td class="mid-align">Rp. {{$item->price}}</td>

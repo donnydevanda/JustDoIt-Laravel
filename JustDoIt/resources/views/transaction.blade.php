@@ -30,7 +30,7 @@
                                 <div class="col-4 my-2">
                                     <div class="card" style="width: 18rem;">
                                         <img src="{{asset('storage/'.$detail->shoes->image)}}" class="card-img-top"
-                                             alt="https://cdn.flightclub.com/TEMPLATE/800801/1.jpg">
+                                             alt="https://cdn.flightclub.com/TEMPLATE/800801/1.jpg" style="width: 285px; height: 170px">
                                     </div>
                                 </div>
                                 @if($loop->last)

@@ -16,9 +16,9 @@
                         <a class="dropdown-item" href="{{url('transaction')}}">View Transaction</a>
                     </div>
                 </div>
-                <div class="row mt-2">
-                    <div class="card mx-auto mt-5" style="width: 35rem;">
-                        <img class="card-img-top py-2 px-2" src="{{asset('storage/'.$shoesCart->image)}}" alt="" style="width: 35rem">
+                <div class="row my-3">
+                    <div class="card mx-auto" style="width: 35rem;">
+                        <img class="card-img-top py-2 px-2" src="{{asset('storage/'.$shoesCart->image)}}" alt="" style=" height: 300px">
                         <div class="card-body">
                             <h2>{{$shoesCart->name}}</h2>
                             <p><b>Rp. {{$shoesCart->price}}</b></p>

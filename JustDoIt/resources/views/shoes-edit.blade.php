@@ -32,15 +32,30 @@
                     <input type="hidden" class="form-control" name="id" value="{{$update->id}}"/>
                     <div class="form-group">
                         <label for="id">Name</label>
-                        <input type="text" class="form-control" name="name" value="{{$update->name}}"/>
+                        <input type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{$update->name}}"/>
+                        @error('name')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
                     </div>
                     <div class="form-group">
                         <label for="price">Price</label>
-                        <input type="number" class="form-control" name="price" value="{{$update->price}}"/>
+                        <input type="number" class="form-control @error('price') is-invalid @enderror" name="price" value="{{$update->price}}"/>
+                        @error('price')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
                     </div>
                     <div class="form-group">
                         <label for="description">Description</label>
-                        <input type="text" class="form-control" name="description" value="{{$update->description}}"/>
+                        <input type="text" class="form-control @error('description') is-invalid @enderror" name="description" value="{{$update->description}}"/>
+                        @error('description')
+                        <span class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                        @enderror
                     </div>
                     <div class="form-group">
                         <label for="Image">Image</label>

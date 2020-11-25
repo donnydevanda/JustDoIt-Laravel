@@ -18,7 +18,7 @@
                 </div>
                 <div class="row mt-2">
                     <div class="col">
-                        <img src="{{asset('storage/'.$shoesDetail->image)}}" alt="" style="width: 500px">
+                        <img src="{{asset('storage/'.$shoesDetail->image)}}" alt="" style="width: 500px; height: 300px">
                     </div>
                     <div class="col my-1">
                         <h2>{{$shoesDetail->name}}</h2>
