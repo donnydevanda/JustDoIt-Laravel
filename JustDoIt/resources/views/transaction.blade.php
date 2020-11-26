@@ -16,32 +16,26 @@
                         <a class="dropdown-item" href="{{url('transaction')}}">View Transaction</a>
                     </div>
                 </div>
-
-                @php
-                    $totalPrice = 0
-                @endphp
-
                 <div class="mt-5">
                         @foreach($items as $item => $itemDetail)
                             <h5>Transaction Date: <b>{{$item}}</b></h5>
                             <div class="row">
-                            @foreach($itemDetail as $detail)
-                                <input type="hidden" value="{{$totalPrice += $detail["price"]}}">
-                                <div class="col-4 my-2">
-                                    <div class="card" style="width: 18rem;">
-                                        <img src="{{asset('storage/'.$detail->shoes->image)}}" class="card-img-top"
-                                             alt="https://cdn.flightclub.com/TEMPLATE/800801/1.jpg" style="width: 285px; height: 170px">
-                                    </div>
-                                </div>
-                                @if($loop->last)
-                                    <h6 class="col-12 mt-3">Total Price: <b>Rp. {{$totalPrice}}</b></h6>
-                                @endif
                                 @php
                                     $totalPrice = 0
                                 @endphp
-                            @endforeach
+                                @foreach($itemDetail as $detail)
+                                    <input type="hidden" value="{{$totalPrice += $detail["price"]}}">
+                                    <div class="col-4 my-2">
+                                        <div class="card" style="width: 18rem;">
+                                            <img src="{{asset('storage/'.$detail->shoes->image)}}" class="card-img-top"
+                                                 alt="https://cdn.flightclub.com/TEMPLATE/800801/1.jpg" style="width: 285px; height: 170px">
+                                        </div>
+                                    </div>
+                                    @if($loop->last)
+                                        <h6 class="col-12 mt-3">Total Price: <b>Rp. {{number_format($totalPrice)}}</b></h6>
+                                    @endif
+                                @endforeach
                             </div>
-
                         <hr>
                         @endforeach
                 </div>

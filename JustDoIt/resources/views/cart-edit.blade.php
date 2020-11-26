@@ -22,7 +22,8 @@
                     </div>
                     <div class="col my-1">
                         <h2>{{$cartEdit->shoes->name}}</h2>
-                        <p><b>Rp. {{$cartEdit->shoes->price}}</b> (Total: Rp. {{$cartEdit->shoes->price * $cartEdit->quantity}})</p>
+                        <p><b>Rp. {{number_format($cartEdit->shoes->price)}}</b>
+                            (Total: Rp. {{number_format($cartEdit->shoes->price * $cartEdit->quantity)}})</p>
                         <p>{{$cartEdit->shoes->description}}</p>
                         <form action="{{url('cartEdit')}}" method="POST" class="mt-3" enctype="multipart/form-data">
                             {{csrf_field()}}

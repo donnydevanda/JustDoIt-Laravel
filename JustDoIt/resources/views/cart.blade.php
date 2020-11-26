@@ -33,7 +33,7 @@
                                 <td><img src="{{asset('storage/'.$item->shoes->image)}}" alt="" style="width: 150px; height: 90px"></td>
                                 <td class="mid-align">{{$item->shoes->name}}</td>
                                 <td class="mid-align">{{$item->quantity}}</td>
-                                <td class="mid-align">Rp. {{$item->price}}</td>
+                                <td class="mid-align">Rp. {{number_format($item->price)}}</td>
                                 <td class="mid-align"><a href="{{ route('cartEdit', $item->shoes_id)}}"><button class="btn btn-primary">Edit</button></a></td>
                             </tr>
                         @endforeach

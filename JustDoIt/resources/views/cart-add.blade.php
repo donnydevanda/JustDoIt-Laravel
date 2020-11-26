@@ -21,7 +21,7 @@
                         <img class="card-img-top py-2 px-2" src="{{asset('storage/'.$shoesCart->image)}}" alt="" style=" height: 300px">
                         <div class="card-body">
                             <h2>{{$shoesCart->name}}</h2>
-                            <p><b>Rp. {{$shoesCart->price}}</b></p>
+                            <p><b>Rp. {{number_format($shoesCart->price)}}</b></p>
                             <p>{{$shoesCart->description}}</p>
                             <form action="{{url('/cart/add/success')}}" method="POST" enctype="multipart/form-data">
                                 {{csrf_field()}}

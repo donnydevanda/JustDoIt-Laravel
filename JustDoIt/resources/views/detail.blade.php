@@ -22,7 +22,7 @@
                     </div>
                     <div class="col my-1">
                         <h2>{{$shoesDetail->name}}</h2>
-                        <p><b>Rp. {{$shoesDetail->price}}</b></p>
+                        <p><b>Rp. {{number_format($shoesDetail->price)}}</b></p>
                         <p>{{$shoesDetail->description}}</p>
                         @if($auth && $role == 'USER')
                             <a href="{{ route('cartAdd', $shoesDetail->id)}}"><button class="btn btn-primary">Add to Cart</button></a>

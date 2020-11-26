@@ -29,7 +29,7 @@
                                         class="card-img-top py-2 px-2" alt="" style="width: 18rem; max-height: 12rem"></a>
                                 <div class="card-body">
                                     <h5 class="card-title"><a href="{{ route('detail', $shoe->id)}}">{{$shoe->name}}</a></h5>
-                                    <p class="card-text">Rp. {{$shoe->price}}</p>
+                                    <p class="card-text">Rp. {{number_format($shoe->price)}}</p>
                                 </div>
                             </div>
                         </div>

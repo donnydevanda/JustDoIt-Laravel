@@ -23,7 +23,7 @@ class TransactionSeeder extends Seeder
                 'users_id' => '3',
                 'shoes_id' => '8',
                 'quantity' => '1',
-                'price' => '38000000',
+                'price' => '4000000',
                 'checkout_time' => '2020-11-22 08:28:22'
             ],
             [
