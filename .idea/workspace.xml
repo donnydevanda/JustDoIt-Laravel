@@ -120,6 +120,7 @@
       <path value="$PROJECT_DIR$/JustDoIt/vendor/phpunit/php-code-coverage" />
       <path value="$PROJECT_DIR$/JustDoIt/vendor/phpunit/phpunit" />
       <path value="$PROJECT_DIR$/JustDoIt/vendor/ramsey/collection" />
+      <path value="$PROJECT_DIR$/JustDoIt/vendor/laravel/ui" />
     </include_path>
   </component>
   <component name="ProjectId" id="1kPMr8ngxevr0ATuFOPjPqm8FQ5" />
@@ -143,6 +144,8 @@
       <updated>1605597970167</updated>
       <workItem from="1605597972350" duration="14000" />
       <workItem from="1605668710040" duration="26000" />
+      <workItem from="1606723153277" duration="34000" />
+      <workItem from="1606793083546" duration="517000" />
     </task>
     <servers />
   </component>

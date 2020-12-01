@@ -106,6 +106,7 @@
       <path value="$PROJECT_DIR$/JustDoIt/vendor/phpunit/php-code-coverage" />
       <path value="$PROJECT_DIR$/JustDoIt/vendor/phpunit/phpunit" />
       <path value="$PROJECT_DIR$/JustDoIt/vendor/ramsey/collection" />
+      <path value="$PROJECT_DIR$/JustDoIt/vendor/laravel/ui" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="7.2" />
